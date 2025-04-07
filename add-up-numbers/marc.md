@@ -17,20 +17,18 @@ simple base case is reached.
 
 ## Implementation
 
-Marc wrote a recursive implementation that uses a conditional base case and a
-recursive step to compute the `sum`. The trickiest bit is understanding how the
-recursion unfolds, stacking calls until the base case is hit, then resolving
-back up to the final result. ``
+Mark used recursion to build the sum from the base case upward.
 
-- Traditional function with explicit return: Mark’s solution uses a standard
-  function with explicit return statements, one for the base case `(num === 1)`
-  and one for the recursive step.
-- Base case with conditional: The function checks if `num === 1`, returning 1 to
-  stop the recursion. This anchors the process, ensuring it doesn’t run
-  indefinitely.
-- Recursive step: For any `num` greater than 1, the function returns `num` plus
-  the result of calling `addUp` on `num - 1`, effectively summing all numbers
-  from 1 up to `num`.
+- Base Case: The function checks if `num` is `1`. If so, it returns `1`, which
+  stops the recursion.
+
+- Recursive Step:
+- If num is greater than `1`, the function returns `num` plus the result of
+  calling `addUp(num - 1)`.
+
+- Call Stack: With each recursive call, ´num´ decreases by `1`. Once the base
+  case is reached, the stack starts resolving, summing up all the values from
+  `1` to `num`.
 
 ## Possible Refactors
 
